@@ -3,9 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Reposition : MonoBehaviour
 {
+    Collider2D _collider2D;
+
+    private void Awake()
+    {
+        _collider2D = GetComponent<Collider2D>();
+    }
+
     void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.CompareTag("Area")) return;
@@ -34,6 +42,10 @@ public class Reposition : MonoBehaviour
                 }
                 break;
             case "Enemy":
+                if (_collider2D.enabled)
+                {
+                    transform.Translate(playerDirection * 25 + new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), Random.Range(-3f, 3f)) * 0f);
+                }
                 break;
             default:
                 break;

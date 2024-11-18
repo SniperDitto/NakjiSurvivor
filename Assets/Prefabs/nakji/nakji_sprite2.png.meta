@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 79395659cbaa8f94cbc745e7b3fd7340
+guid: a9c6e111bc6ad39489a29ffdadea2de1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,11 +93,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: nakji_sprite_0
+      name: run 0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 286d2ddc29eb758478c4e8a939876c48
-      internalID: 1676383024
+      spriteID: 8ade479ac020b2140bf5945db55a4032
+      internalID: -620874897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nakji_sprite_1
+      name: run 1
       rect:
         serializedVersion: 2
         x: 19
@@ -132,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52ef8c574215ffa478195898dd5e2537
-      internalID: -897770989
+      spriteID: 8e23f87060149ff44a49059d99b82329
+      internalID: 404213555
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nakji_sprite_2
+      name: run 2
       rect:
         serializedVersion: 2
         x: 38
@@ -153,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dac8b5ee9e776844dbf11f3d246cfcd1
-      internalID: -212930245
+      spriteID: 7d9eff8dbf3f6a84c881944ff829a9d7
+      internalID: 706411427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nakji_sprite_3
+      name: run 3
       rect:
         serializedVersion: 2
         x: 0
@@ -174,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c5c1f216ebbac443a6087679ad7d2af
-      internalID: -1157680513
+      spriteID: 9336bc7866aa18e4799e5babdb8cc711
+      internalID: 811204301
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nakji_sprite_4
+      name: run 4
       rect:
         serializedVersion: 2
         x: 19
@@ -195,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2edbddf093fea2e42974b74c03a7c8f5
-      internalID: -361015487
+      spriteID: 0d350fc5e6c2ba2488d30b156d8f8c43
+      internalID: 635903296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nakji_sprite_5
+      name: run 5
       rect:
         serializedVersion: 2
         x: 38
@@ -216,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 048a28e3567c2c54d88ccb87732714f2
-      internalID: -1119619893
+      spriteID: 9cd51fa8b536f1143b359bf1c5e35e32
+      internalID: 2128199869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nakji_sprite_6
+      name: stand 0
       rect:
         serializedVersion: 2
         x: 0
@@ -237,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb3c1bdb37d855c419a7923a6881dbb0
-      internalID: 2044318460
+      spriteID: ddc342a9d78d2d14884fb91a801f7033
+      internalID: -1714331580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nakji_sprite_7
+      name: stand 1
       rect:
         serializedVersion: 2
         x: 19
@@ -258,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 434cf8d8d1fbb6f408c381f079635a25
-      internalID: -551534794
+      spriteID: 65fa1a501eeab594585e8c041fec7910
+      internalID: -990502961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nakji_sprite_8
+      name: stand 2
       rect:
         serializedVersion: 2
         x: 38
@@ -279,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b26a4014b25b2645ad6da86041c00f4
-      internalID: -1096069602
+      spriteID: f8728d681af0cd144b603c6821e296da
+      internalID: -1970732316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nakji_sprite_9
+      name: stand 3
       rect:
         serializedVersion: 2
         x: 0
@@ -300,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3049c819b93be88419d72716a257fdce
-      internalID: -190196397
+      spriteID: 82ee3f3cca7e30d49bf0febfd8d3517a
+      internalID: -1075348476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nakji_sprite_rip_1
+      name: dead 0
       rect:
         serializedVersion: 2
         x: 19
@@ -321,14 +334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d09b848660eac504b9a19c1b6fa20379
-      internalID: 178284014
+      spriteID: 64ad49ee3f4d2224b824751c491a8a64
+      internalID: -48624194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nakji_sprite_rip_2
+      name: dead 1
       rect:
         serializedVersion: 2
         x: 38
@@ -342,8 +355,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab857481c9f0adf40a8fb5139e6361a3
-      internalID: 570955991
+      spriteID: 9d5568edff6369c47aca6d7a445e444f
+      internalID: 868433493
       vertices: []
       indices: 
       edges: []
@@ -359,18 +372,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      nakji_sprite_0: 1676383024
-      nakji_sprite_1: -897770989
-      nakji_sprite_2: -212930245
-      nakji_sprite_3: -1157680513
-      nakji_sprite_4: -361015487
-      nakji_sprite_5: -1119619893
-      nakji_sprite_6: 2044318460
-      nakji_sprite_7: -551534794
-      nakji_sprite_8: -1096069602
-      nakji_sprite_9: -190196397
-      nakji_sprite_rip_1: 178284014
-      nakji_sprite_rip_2: 570955991
+      dead 0: -48624194
+      dead 1: 868433493
+      run 0: -620874897
+      run 1: 404213555
+      run 2: 706411427
+      run 3: 811204301
+      run 4: 635903296
+      run 5: 2128199869
+      stand 0: -1714331580
+      stand 1: -990502961
+      stand 2: -1970732316
+      stand 3: -1075348476
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
