@@ -32,4 +32,9 @@ public class Enemy : MonoBehaviour
         if (!_isAlive) return;
         _spriteRenderer.flipX = target.position.x < _rigidbody.position.x;
     }
+
+    private void OnEnable()
+    {
+        target = GameManager.Instance.player.GetComponent<Rigidbody2D>();
+    }
 }
