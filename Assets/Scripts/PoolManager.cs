@@ -9,15 +9,15 @@ public class PoolManager : MonoBehaviour
     public GameObject[] prefabs;
 
     // pool 관리용
-    List<GameObject>[] pools;
+    List<GameObject>[] _pools;
 
     private void Awake()
     {
-        pools = new List<GameObject>[prefabs.Length];
+        _pools = new List<GameObject>[prefabs.Length];
 
-        for (int i = 0; i < pools.Length; i++)
+        for (int i = 0; i < _pools.Length; i++)
         {
-            pools[i] = new List<GameObject>();
+            _pools[i] = new List<GameObject>();
         }
     }
 
@@ -27,7 +27,7 @@ public class PoolManager : MonoBehaviour
         
         // 선택된 pool에 있는 object 중 비활성화된(사용되지 않는) gameobject에 접근
         // 있으면 그거 쓰고 없으면 새로운 object 생성 + pool에 등록
-        foreach (var item in pools[index])
+        foreach (var item in _pools[index])
         {
             if (!item.activeSelf)
             {
@@ -40,7 +40,7 @@ public class PoolManager : MonoBehaviour
         if (!selected)
         {
             selected = Instantiate(prefabs[index], transform);
-            pools[index].Add(selected);
+            _pools[index].Add(selected);
         }
         
         return selected;
