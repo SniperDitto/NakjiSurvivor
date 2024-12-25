@@ -432,7 +432,7 @@ Transform:
   m_GameObject: {fileID: 376299021}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2639984, y: 0.10778895, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9945,7 +9945,7 @@ MonoBehaviour:
   id: 0
   prefabId: 1
   damage: 15
-  count: 1
+  count: 8
   speed: 0
 --- !u!1 &1407262042
 GameObject:
