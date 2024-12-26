@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,14 @@ public class Weapon : MonoBehaviour
     public float damage;
     public int count;
     public float speed;
+
+    private float timer;
+    private Player player;
+
+    private void Awake()
+    {
+        player = GetComponentInParent<Player>();
+    }
 
     void Start()
     {
@@ -23,22 +32,34 @@ public class Weapon : MonoBehaviour
                 // 회전 시계방향
                 transform.Rotate(Vector3.back * (speed * Time.deltaTime));
                 break;
+            case 1:
+                timer += Time.deltaTime;
+
+                if (timer > speed)
+                {
+                    timer = 0f;
+                    Fire();
+                }
+                break;
             default:
                 break;
         }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            LevelUp(5,2);
+            LevelUp(2, 1);
         }
     }
 
     public void LevelUp(float damage, int count)
     {
-        this.damage = damage;
-        this.count = count;
-        
-        if (id==0) SetBullet();
+        this.damage += damage;
+        this.count += count;
+
+        if (id == 0)
+        {
+            SetBullet();
+        }
         
     }
 
@@ -47,8 +68,13 @@ public class Weapon : MonoBehaviour
         switch (id)
         {
             case 0:
+                // 회전속도
                 speed = 150;
                 SetBullet();
+                break;
+            case 1:
+                // 연사속도
+                speed = 0.3f;
                 break;
             default:
                 break;
@@ -68,10 +94,10 @@ public class Weapon : MonoBehaviour
             else
             {
                 bullet = GameManager.Instance.poolManager.GetObject(prefabId).transform;
+                bullet.parent = transform;
             }
             
             // player를 부모로 지정
-            bullet.parent = transform;
             bullet.localPosition = Vector3.zero;
             bullet.localRotation = Quaternion.identity;
             
@@ -80,10 +106,25 @@ public class Weapon : MonoBehaviour
             bullet.Rotate(rotation);
             bullet.Translate(bullet.up * 1.5f, Space.World);
             
-            // 근접무기 관통 무한
-            bullet.GetComponent<Bullet>().Init(damage, -1); 
+            // 근접무기 관통수 무한
+            bullet.GetComponent<Bullet>().Init(damage, -1, Vector3.zero); 
             
             
         }
+    }
+
+    void Fire()
+    {
+        if(!player.scanner.nearestTarget) return;
+
+        Vector3 targetPosition = player.scanner.nearestTarget.position;
+        Vector3 dir = targetPosition - transform.position;
+        dir = dir.normalized;
+
+        Transform bullet = GameManager.Instance.poolManager.GetObject(prefabId).transform;
+        bullet.position = transform.position;
+        bullet.rotation = Quaternion.FromToRotation(Vector3.up, dir);
+        bullet.GetComponent<Bullet>().Init(damage, count, dir);
+
     }
 }
