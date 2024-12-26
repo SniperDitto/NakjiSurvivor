@@ -26,6 +26,20 @@ public class Weapon : MonoBehaviour
             default:
                 break;
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            LevelUp(5,2);
+        }
+    }
+
+    public void LevelUp(float damage, int count)
+    {
+        this.damage = damage;
+        this.count = count;
+        
+        if (id==0) SetBullet();
+        
     }
 
     public void Init()
@@ -45,10 +59,21 @@ public class Weapon : MonoBehaviour
     {
         for (int i = 0; i < count; i++)
         {
-            Transform bullet = GameManager.Instance.poolManager.GetObject(prefabId).transform;
+            Transform bullet;
+            // 기존 무기들 재배치
+            if (i < transform.childCount)
+            {
+                bullet = transform.GetChild(i);
+            }
+            else
+            {
+                bullet = GameManager.Instance.poolManager.GetObject(prefabId).transform;
+            }
             
             // player를 부모로 지정
             bullet.parent = transform;
+            bullet.localPosition = Vector3.zero;
+            bullet.localRotation = Quaternion.identity;
             
             // 방향 회전 후 일정 거리만큼 떨어트림
             Vector3 rotation = Vector3.forward * 360 * i / count;
