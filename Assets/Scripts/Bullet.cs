@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -38,6 +39,16 @@ public class Bullet : MonoBehaviour
         if (per == -1)
         {
             _rigidbody2D.velocity = Vector2.zero; // 재사용 대비해 속도 미리 리셋
+            gameObject.SetActive(false);
+        }
+    }
+
+    // 맵 밖으로 나가면 총알 비활성화
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Area"))
+        {
+            _rigidbody2D.velocity = Vector2.zero;
             gameObject.SetActive(false);
         }
     }
