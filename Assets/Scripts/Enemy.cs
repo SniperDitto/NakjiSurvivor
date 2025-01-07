@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
         Vector2 directionVector = target.position - _rigidbody.position;
         Vector2 nextVector = directionVector.normalized * (speed * Time.fixedDeltaTime);
         _rigidbody.MovePosition(_rigidbody.position + nextVector);
-        _rigidbody.velocity = Vector2.zero;
+        _rigidbody.linearVelocity = Vector2.zero;
     }
 
     private void LateUpdate()

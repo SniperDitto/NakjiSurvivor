@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
         if (per > -1)
         {
             // 원거리 무기인 경우
-            _rigidbody2D.velocity = dir * speed;
+            _rigidbody2D.linearVelocity = dir * speed;
         }
     }
 
@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour
 
         if (per == -1)
         {
-            _rigidbody2D.velocity = Vector2.zero; // 재사용 대비해 속도 미리 리셋
+            _rigidbody2D.linearVelocity = Vector2.zero; // 재사용 대비해 속도 미리 리셋
             gameObject.SetActive(false);
         }
     }
@@ -48,7 +48,7 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Area"))
         {
-            _rigidbody2D.velocity = Vector2.zero;
+            _rigidbody2D.linearVelocity = Vector2.zero;
             gameObject.SetActive(false);
         }
     }
