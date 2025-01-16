@@ -7,5 +7,11 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: NakjiAnimatorController
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: 6df1f10a02536ab44856440ecd251eda, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 2feb431030b530348ad27d0fa8f4d2da, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2feb431030b530348ad27d0fa8f4d2da, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3ae427966ecd6424f8004063fa895d3c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3ae427966ecd6424f8004063fa895d3c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c255c3aa6ab541b4bb768c7684dcd189, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c255c3aa6ab541b4bb768c7684dcd189, type: 2}
