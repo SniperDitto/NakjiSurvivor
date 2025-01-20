@@ -65,7 +65,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Bullet")) return;
+        if (!other.CompareTag("Bullet") || !_isAlive) return;
 
         health -= other.GetComponent<Bullet>().damage;
         StartCoroutine(KnockBack());
@@ -83,6 +83,9 @@ public class Enemy : MonoBehaviour
             _rigidbody.simulated = false;
             _spriteRenderer.sortingOrder = 1; // 캐릭터 가리지 않기 위해 순서 변경
             _animator.SetBool("Dead", true);
+
+            GameManager.Instance.killCnt++;
+            GameManager.Instance.GetExp();
             
         }
     }

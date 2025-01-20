@@ -6,13 +6,22 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public PoolManager poolManager;
     
+    
+    [Header("game control")]
     public float gameTime;
     public float gameOverTime = 2 * 10f;
     public float gameLevelChangeTime = 10f;
     
+    [Header("game object")]
+    public PoolManager poolManager;
     public Player player;
+
+    [Header("player info")]
+    public int level;
+    public int killCnt;
+    public int exp;
+    public int[] nextExp = { 3, 5, 10, 30, 60, 100, 150, 210, 280, 360, 450, 600 };
 
     private void Awake()
     {
@@ -26,6 +35,17 @@ public class GameManager : MonoBehaviour
         if (gameTime >= gameOverTime)
         {
             //gameTime = gameOverTime;
+        }
+    }
+
+    public void GetExp()
+    {
+        exp++;
+
+        if (exp >= nextExp[level])
+        {
+            level++;
+            exp = 0;
         }
     }
 }
