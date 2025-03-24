@@ -22,7 +22,12 @@ public class Item : MonoBehaviour
 
     private void LateUpdate()
     {
-        _textLevel.text = "Lv." + (level + 1);
+		if (level == data.damages.Length)
+        {
+            _textLevel.text = "Lv.Max";
+        } else {
+			_textLevel.text = "Lv." + (level + 1);
+		}
     }
 
     public void OnClick()
