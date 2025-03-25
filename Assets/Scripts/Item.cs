@@ -7,6 +7,7 @@ public class Item : MonoBehaviour
     public ItemData data;
     public int level;
     public Weapon weapon;
+    public Gear gear;
 
     private Image _icon;
     private Text _textLevel;
@@ -52,18 +53,30 @@ public class Item : MonoBehaviour
                     
                     weapon.LevelUp(nextDmg, nextCnt);
                 }
+                level++;
                 break;
             case ItemData.ItemType.gloves:
-                break;
             case ItemData.ItemType.shoes:
+                if (level == 0)
+                {
+                    GameObject newGear = new GameObject();
+                    gear = newGear.AddComponent<Gear>();
+                    gear.Init(data);
+                }
+                else
+                {
+                    float nextRate = data.damages[level];
+                    gear.LevelUp(nextRate);
+                }
+                level++;
                 break;
             case ItemData.ItemType.heal:
+                GameManager.Instance.health = GameManager.Instance.maxHealth;
                 break;
             default:
                 break;
         }
-
-        level++;
+        
         if (level == data.damages.Length)
         {
             GetComponent<Button>().interactable = false;

@@ -56,6 +56,7 @@ public class Weapon : MonoBehaviour
             SetBullet();
         }
         
+        player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
     }
 
     public void Init(ItemData data)
@@ -93,6 +94,8 @@ public class Weapon : MonoBehaviour
             default:
                 break;
         }
+        
+        player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
     }
 
     void SetBullet()

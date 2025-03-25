@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [Header("game object")]
     public PoolManager poolManager;
     public Player player;
+    public Transform uiJoy;
 
     [Header("player info")] 
     public int health;
@@ -56,5 +57,15 @@ public class GameManager : MonoBehaviour
             level++;
             exp = 0;
         }
+    }
+
+    public void Stop()
+    {
+        uiJoy.localScale = Vector3.zero;
+    }
+
+    public void Resume()
+    {
+        uiJoy.localScale = Vector3.one;
     }
 }
